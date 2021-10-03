@@ -8,19 +8,19 @@ void main(void)
 	setlocale(LC_ALL, "rus");
 	setvbuf(stdin, NULL, _IONBF, 0);
 	setvbuf(stdout, NULL, _IONBF, 0);
-	printf_s("\nМатрица 100*100: \n");
+	printf_s("\nГЊГ ГІГ°ГЁГ¶Г  100*100: \n");
 	function(100);
-	printf_s("\nМатрица 200*200: \n");
+	printf_s("\nГЊГ ГІГ°ГЁГ¶Г  200*200: \n");
 	function(200);
-printf_s("\nМатрица 400*400: \n");
+printf_s("\nГЊГ ГІГ°ГЁГ¶Г  400*400: \n");
 	function(400);
-	printf_s("\nМатрица 1000*1000: \n");
+	printf_s("\nГЊГ ГІГ°ГЁГ¶Г  1000*1000: \n");
 	function(1000);
-	printf_s("\nМатрица 2000*2000: \n");
+	printf_s("\nГЊГ ГІГ°ГЁГ¶Г  2000*2000: \n");
 	function(2000);
-	printf_s("\nМатрица 4000*4000: \n");
+	printf_s("\nГЊГ ГІГ°ГЁГ¶Г  4000*4000: \n");
 	function(4000);
-	printf_s("\nМатрица 10000*10000: \n");
+	printf_s("\nГЊГ ГІГ°ГЁГ¶Г  10000*10000: \n");
 	function(10000);
 	
 	
@@ -78,7 +78,7 @@ void function(int rasmer)
 		}
 		i++;
 	}
-	//Перемножение матриц:
+	//ГЏГҐГ°ГҐГ¬Г­Г®Г¦ГҐГ­ГЁГҐ Г¬Г ГІГ°ГЁГ¶:
 	start = time(NULL);
 	for (i = 0; i < rasmer; i++)
 	{
@@ -107,7 +107,7 @@ void function(int rasmer)
 	free(mas3);
 	end1 = time(NULL);
 	rasn1 = difftime(end1, start1);
-	printf_s("Время выполнения функции: %lf\n", rasn1);
-	printf_s("Время выполнения умножения: %lf\n", rasn);
+	printf_s("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї ГґГіГ­ГЄГ¶ГЁГЁ: %lf\n", rasn1);
+	printf_s("Г‚Г°ГҐГ¬Гї ГўГ»ГЇГ®Г«Г­ГҐГ­ГЁГї ГіГ¬Г­Г®Г¦ГҐГ­ГЁГї: %lf\n", rasn);
 	
 }
