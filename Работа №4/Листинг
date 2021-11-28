@@ -25,7 +25,7 @@ void main()
 	int i = 0;
 	int j = 0;
 	int sum = 0;
-	printf_s("Введите количество вершин: ");
+	printf_s("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГўГҐГ°ГёГЁГ­: ");
 	scanf_s("%d", &a);
 	srand(time(NULL));
 	matrix = (int**)malloc(a * sizeof(int));
@@ -52,7 +52,7 @@ void main()
 
 	}
 
-	printf_s("Матрица:\n");
+	printf_s("ГЊГ ГІГ°ГЁГ¶Г :\n");
 	for (i = 0; i < a; i++)
 	{
 		printf_s("%d|", i);
@@ -73,17 +73,17 @@ void main()
 		}
 		printf_s("\n");
 	}
-	printf_s("Введите стартовый узел:");
+	printf_s("Г‚ГўГҐГ¤ГЁГІГҐ Г±ГІГ Г°ГІГ®ГўГ»Г© ГіГ§ГҐГ«:");
 	int start = 0;
 	scanf_s("%d", &start);
-	printf_s("Результат обхода матрицы:\n");
+	printf_s("ГђГҐГ§ГіГ«ГјГІГ ГІ Г®ГЎГµГ®Г¤Г  Г¬Г ГІГ°ГЁГ¶Г»:\n");
 	DFS(matrix, start);
     for (i = 0; i < a; i++) visited[i] = 0;
 	printf_s("\n");
-	printf_s("Результат обхода списка:\n");
+	printf_s("ГђГҐГ§ГіГ«ГјГІГ ГІ Г®ГЎГµГ®Г¤Г  Г±ГЇГЁГ±ГЄГ :\n");
 	DFS_spisok(start);	
 	for (i = 0; i < a; i++) visited[i] = 0;
-	printf_s("\nРезультат нерекурсивного обхода:\n");
+	printf_s("\nГђГҐГ§ГіГ«ГјГІГ ГІ Г­ГҐГ°ГҐГЄГіГ°Г±ГЁГўГ­Г®ГЈГ® Г®ГЎГµГ®Г¤Г :\n");
 	DFC_no_recurs(matrix, start);
 	
 }
