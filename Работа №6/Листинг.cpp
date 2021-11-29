@@ -32,7 +32,7 @@ void main()
 	double time_bfs_matr=0, time_bfs_sp=0, time_dfs_matr=0, time_dfs_sp=0;
 	while (1)
 	{
-		printf_s("Введите количество вершин, -1 для завершения ");
+		printf_s("Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГўГҐГ°ГёГЁГ­, -1 Г¤Г«Гї Г§Г ГўГҐГ°ГёГҐГ­ГЁГї ");
 		scanf_s("%d", &a);
 		if (a == -1) break;
 		srand(time(NULL));
@@ -60,7 +60,7 @@ void main()
 
 		}
 
-		printf_s("Матрица:\n");
+		printf_s("ГЊГ ГІГ°ГЁГ¶Г :\n");
 		for (i = 0; i < a; i++)
 		{
 			printf_s("%d|", i);
@@ -71,7 +71,7 @@ void main()
 			printf_s("\n");
 		}
 		//
-		printf_s("Введите стартовый узел:");
+		printf_s("Г‚ГўГҐГ¤ГЁГІГҐ Г±ГІГ Г°ГІГ®ГўГ»Г© ГіГ§ГҐГ«:");
 		int start = 0;
 		scanf_s("%d", &start);
 		//
@@ -90,17 +90,17 @@ void main()
 		diff_time = clock();
 		BFC_with_distanse(matrix, start, a);
 		time_bfs_matr = (clock() - diff_time) / 1000;
-		printf_s("Время поиска в ширину по матрице: %lf\n", time_bfs_matr);
+		printf_s("Г‚Г°ГҐГ¬Гї ГЇГ®ГЁГ±ГЄГ  Гў ГёГЁГ°ГЁГ­Гі ГЇГ® Г¬Г ГІГ°ГЁГ¶ГҐ: %lf\n", time_bfs_matr);
 		//
 		diff_time = clock();
 		BFS_spisok(start, a);
 		time_bfs_sp = (clock() - diff_time) / 1000;
-		printf_s("Время поиска в ширину по списку смежностей: %lf\n", time_bfs_matr);
+		printf_s("Г‚Г°ГҐГ¬Гї ГЇГ®ГЁГ±ГЄГ  Гў ГёГЁГ°ГЁГ­Гі ГЇГ® Г±ГЇГЁГ±ГЄГі Г±Г¬ГҐГ¦Г­Г®Г±ГІГҐГ©: %lf\n", time_bfs_matr);
 		//
 		diff_time = clock();
 		DFS(matrix, start, a);
 		time_dfs_matr = (clock() - diff_time) / 1000;
-		printf_s("Время поиска в глубину по матрице: %lf\n", time_dfs_matr);
+		printf_s("Г‚Г°ГҐГ¬Гї ГЇГ®ГЁГ±ГЄГ  Гў ГЈГ«ГіГЎГЁГ­Гі ГЇГ® Г¬Г ГІГ°ГЁГ¶ГҐ: %lf\n", time_dfs_matr);
 		//
 
 		for (i = 0; i < a; i++) distanse_DFS[i] = -1;
@@ -108,7 +108,7 @@ void main()
 		diff_time = clock();
 		DFS_spisok(start);
 		time_dfs_sp = (clock() - diff_time) / 1000;
-		printf_s("Время поиска в глубину по списку: %lf\n", time_dfs_sp);
+		printf_s("Г‚Г°ГҐГ¬Гї ГЇГ®ГЁГ±ГЄГ  Гў ГЈГ«ГіГЎГЁГ­Гі ГЇГ® Г±ГЇГЁГ±ГЄГі: %lf\n", time_dfs_sp);
 		delete_spisok(a);
 		free(distanse_DFS);
 		for (i = 0; i < a; i++)
@@ -133,7 +133,7 @@ void BFC_with_distanse(int** matrix, int start,int rasm)
 	{
 		visited = Q.front();
 		Q.pop();
-		printf_s("Вершина: %d, расстояние: %d\n", visited,distanse[visited]);
+		printf_s("Г‚ГҐГ°ГёГЁГ­Г : %d, Г°Г Г±Г±ГІГ®ГїГ­ГЁГҐ: %d\n", visited,distanse[visited]);
 		for (i = 0; i < rasm; i++)
 		{
 			if (matrix[visited][i] == 1 && distanse[i] == -1)
@@ -147,7 +147,7 @@ void BFC_with_distanse(int** matrix, int start,int rasm)
 	for (i = 0; i < rasm; i++)
 	{
 		if (distanse[i] == -1)
-			printf_s("\nВершина %d не посещена, т.к. изолирована.\n", i);
+			printf_s("\nГ‚ГҐГ°ГёГЁГ­Г  %d Г­ГҐ ГЇГ®Г±ГҐГ№ГҐГ­Г , ГІ.ГЄ. ГЁГ§Г®Г«ГЁГ°Г®ГўГ Г­Г .\n", i);
 	}
 	free(distanse);
 }
@@ -194,7 +194,7 @@ void BFS_spisok(int start,int rasm)
 		visited = Q.front();
 		elem = MAS[visited];
 		Q.pop();
-		printf_s("Вершина: %d, расстояние: %d\n", visited, distanse[visited]);
+		printf_s("Г‚ГҐГ°ГёГЁГ­Г : %d, Г°Г Г±Г±ГІГ®ГїГ­ГЁГҐ: %d\n", visited, distanse[visited]);
 		while (elem != NULL)
 		{
 			if (distanse[elem->num] == -1)
@@ -231,7 +231,7 @@ void DFS(int** matrix, int start,int rasm)
 	int i = 0;
 	visited_DFS = visited_DFS++;
 	distanse_DFS[start] = visited_DFS;
-	printf_s("Вершина:%d, расстояние: %d\n",start,distanse_DFS[start]);
+	printf_s("Г‚ГҐГ°ГёГЁГ­Г :%d, Г°Г Г±Г±ГІГ®ГїГ­ГЁГҐ: %d\n",start,distanse_DFS[start]);
 	for (i = 0; i < rasm; i++)
 	{
 		if ((matrix[start][i] == 1) && (distanse_DFS[i] == -1)) DFS(matrix, i,r);
@@ -247,7 +247,7 @@ void DFS_spisok(int start)
 	struct sp* node = MAS[start];
 	visited_DFS = visited_DFS++;
 	distanse_DFS[start] = visited_DFS;
-	printf_s("Вершина:%d, расстояние: %d\n", start, distanse_DFS[start]);
+	printf_s("Г‚ГҐГ°ГёГЁГ­Г :%d, Г°Г Г±Г±ГІГ®ГїГ­ГЁГҐ: %d\n", start, distanse_DFS[start]);
 	do
 	{
 		if (distanse_DFS[node->num] == -1)
